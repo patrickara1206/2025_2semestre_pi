@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento - Sala de Química</title>
+  
+  <!-- Links para os arquivos de estilo CSS externos -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/agendamento.css">
+</head>
+
+<body>
+
+  <!-- Cabeçalho com logos -->
+  <header>
+    <div class="logo-bar">
+      <a href="https://www.saopaulo.sp.gov.br/" target="_blank">
+        <img src="/imagens/logo-governo-do-estado-sp.png" alt="Governo de São Paulo">
+      </a>
+      <a href="index.html" target="_blank">
+        <img src="/imagens/etec_santo_andre.png" alt="Logo ETEC">
+      </a>
+      <a href="https://www.cps.sp.gov.br/" target="_blank">
+        <img src="/imagens/cps-55-anos-edit.png" alt="Centro Paula Souza">
+      </a>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <div class="agendamento-container">
+    <h2>Agendamento da Sala de Química</h2>
+    <label for="data">Selecione a data:</label>
+    <input type="date" id="data">
+
+    <div class="horarios" id="horarios">
+      <!-- Os horários serão gerados pelo JavaScript aqui -->
+    </div>
+
+    <div class="actions">
+      <button id="ok-btn" class="btn">OK</button>
+      <button id="cancel-btn" class="btn btn-secondary">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Botão para abrir a janela de materiais -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <button onclick="abrirJanelaMateriais()" class="btn">Selecionar Materiais</button>
+  </div>
+
+  <!-- Janela modal de seleção de materiais -->
+  <div id="janelaMateriais" class="modal-materiais">
+    <div class="modal-materiais-content">
+      <h3>Materiais para uso</h3>
+
+      <strong>Reagentes:</strong>
+      <label><input type="checkbox" value="Ácido Clorídrico"> Ácido Clorídrico</label>
+      <label><input type="checkbox" value="Álcool Etílico"> Álcool Etílico</label>
+      <label><input type="checkbox" value="Fenolftaleína"> Fenolftaleína</label>
+
+      <strong>Equipamentos:</strong>
+      <label><input type="checkbox" value="Balança Analítica"> Balança Analítica</label>
+      <label><input type="checkbox" value="pHmetro"> pHmetro</label>
+      <label><input type="checkbox" value="Agitador Magnético"> Agitador Magnético</label>
+
+      <strong>Vidrarias:</strong>
+      <label><input type="checkbox" value="Béquer 250mL"> Béquer 250mL</label>
+      <label><input type="checkbox" value="Erlenmeyer 500mL"> Erlenmeyer 500mL</label>
+      <label><input type="checkbox" value="Tubo de Ensaio"> Tubo de Ensaio</label>
+
+      <div class="actions" style="margin-top: 20px;">
+        <button onclick="fecharJanelaMateriais()" class="btn">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link para o arquivo JavaScript externo -->
+  <script src="js/agendamento.js"></script>
+</body>
+
+</html>

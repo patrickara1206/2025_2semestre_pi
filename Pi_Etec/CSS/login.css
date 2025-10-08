@@ -1,0 +1,186 @@
+/* ------------------- */
+/* ESTILOS DE LOGIN E RECUPERAÇÃO */
+/* ------------------- */
+
+/* Importação da fonte principal */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Estilo do corpo da página com gradiente */
+body.login-body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #C41E3A 0%, #A01729 100%); /* Gradiente Vermelho ETEC */
+}
+
+/* Fundo alternativo para a página de recuperação de senha */
+body.recovery-body {
+  background: linear-gradient(135deg, #003366 0%, #1e40af 100%); /* Gradiente Azul ETEC */
+}
+
+/* ------------------- */
+/* CONTAINER E CARD    */
+/* ------------------- */
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem; /* Bordas mais arredondadas */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 450px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header .logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.auth-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.auth-header p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ------------------- */
+/* FORMULÁRIOS         */
+/* ------------------- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-left: 2.75rem; /* Espaço para o ícone */
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #C41E3A;
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* ------------------- */
+/* BOTÕES              */
+/* ------------------- */
+.btn-auth {
+  width: 100%;
+  background: linear-gradient(135deg, #C41E3A 0%, #dc2626 100%);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-auth:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(196, 30, 58, 0.3);
+}
+
+/* ------------------- */
+/* LINKS E OPÇÕES      */
+/* ------------------- */
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.auth-options a {
+  color: #C41E3A;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-options a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------- */
+/* ESTILOS PARA RECUPERAÇÃO DE SENHA */
+/* ------------------- */
+.step-indicator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.step-indicator {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.step-active {
+  background-color: #C41E3A;
+  color: white;
+}
+
+.step-completed {
+  background-color: #10b981; /* Verde sucesso */
+  color: white;
+}
+
+.step-inactive {
+  background-color: #e5e7eb;
+  color: #6b7280;
+}
