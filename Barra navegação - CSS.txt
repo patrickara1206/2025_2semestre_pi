@@ -1,0 +1,25 @@
+/* Barra de navegação */
+.barra-navegacao-principal {
+    background-color: #a40000;
+    width: 100%;
+}
+
+.barra-navegacao-principal ul {
+    list-style: none;       /* Para tirar as bolinhas - estilo padrão de lista */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.barra-navegacao-principal ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.barra-navegacao-principal ul li a:hover {
+    background-color: #8c0000;
+}

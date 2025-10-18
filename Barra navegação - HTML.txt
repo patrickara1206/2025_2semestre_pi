@@ -1,0 +1,8 @@
+<nav class="barra-navegacao-principal">
+        <ul>
+            <li tag="item-1"><a href="#">Dashboard</a></li>
+            <li tag="item-2"><a href="#">Novo Agendamento</a></li>
+            <li tag="item-3"><a href="#">Meus Kits</a></li>
+            <li tag="item-4"><a href="#">Histórico</a></li>
+        </ul>
+    </nav>
