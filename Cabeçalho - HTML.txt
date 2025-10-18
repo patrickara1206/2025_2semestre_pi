@@ -1,0 +1,33 @@
+<header class="cabecalho-inicial">
+        <div class="container-logo">
+            <a href="https://etecjuliodemesquita.cps.sp.gov.br/">
+                <img src="https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/143/2024/04/etec_santo_andre.png"
+                    alt="Etec Júlio de Mesquita">
+            </a>
+        </div>
+        <div class="etec-info">
+            <strong>
+                ETEC Júlio de Mesquita
+            </strong>
+            <br>
+            <span>
+                Sistema de Laboratórios de Química
+            </span>
+        </div>
+        <div class="container-usuario">
+            <div class="usuario-info">
+                <span>
+                    João Silva
+                </span>
+                <br>
+                <small>
+                    Técnico de Laboratório
+                </small>
+            </div>
+            <button onclick="window.location.href='telaLogin.html'" class="botao-sair">
+                Sair
+            </button>
+
+        </div>
+
+    </header>
