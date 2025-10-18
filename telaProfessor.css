@@ -1,0 +1,72 @@
+/* Reset básico e estilo do corpo */
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.cabecalho-inicial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.container-logo, .container-usuario{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.container-logo img {
+    height: 60px;
+    object-fit: contain;    /* Garante que a imagem não se distorça */
+}
+
+.botao-sair {
+    background-color: #C41E3A;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Estilo da barra de navegação principal */
+.menu-principal {
+    background-color: #a40000; /* Vermelho escuro */
+    width: 100%;
+}
+
+.menu-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza os itens na barra */
+}
+
+.menu-principal ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.menu-principal ul li a:hover {
+    background-color: #8c0000; /* Um tom de vermelho um pouco mais escuro ao passar o mouse */
+}
+
+#item-1 {
+    margin-right: 10px solid black;
+}
