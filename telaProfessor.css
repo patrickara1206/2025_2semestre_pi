@@ -1,4 +1,3 @@
-/* Reset básico e estilo do corpo */
 body {
     font-family: Roboto, sans-serif;
     margin: 0;
@@ -6,6 +5,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Cabeçalho padrão etec */
 .cabecalho-inicial {
     display: flex;
     justify-content: space-between;
@@ -15,7 +15,7 @@ body {
     border-bottom: 1px solid #dee2e6;
 }
 
-.container-logo, .container-usuario{
+.container-logo, .container-usuario {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -23,7 +23,11 @@ body {
 
 .container-logo img {
     height: 60px;
-    object-fit: contain;    /* Garante que a imagem não se distorça */
+    object-fit: contain;
+}
+
+.etec-info, .usuario-info {
+    text-align: center;
 }
 
 .botao-sair {
@@ -37,25 +41,21 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
-/* Estilo da barra de navegação principal */
-.menu-principal {
-    background-color: #a40000; /* Vermelho escuro */
+/* Barra de navegação */
+.barra-navegacao-principal {
+    background-color: #a40000;
     width: 100%;
 }
 
-.menu-principal ul {
+.barra-navegacao-principal ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Centraliza os itens na barra */
+    justify-content: center;
 }
 
-.menu-principal ul li a {
+.barra-navegacao-principal ul li a {
     color: white;
     text-decoration: none;
     padding: 20px;
@@ -63,10 +63,15 @@ body {
     transition: background-color 0.3s;
 }
 
-.menu-principal ul li a:hover {
-    background-color: #8c0000; /* Um tom de vermelho um pouco mais escuro ao passar o mouse */
+.barra-navegacao-principal ul li a:hover {
+    background-color: #8c0000;
 }
 
-#item-1 {
-    margin-right: 10px solid black;
+/* Cards */
+.container-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1b72c9;
+    padding: 1rem 2rem;
 }
