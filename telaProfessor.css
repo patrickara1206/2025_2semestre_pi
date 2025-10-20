@@ -67,6 +67,21 @@ body {
     background-color: #8c0000;
 }
 
+/* Estilos para navegação entre abas */
+.conteudo-secao {
+    display: none;
+}
+
+.conteudo-secao.ativo {
+    display: block;
+}
+
+.barra-navegacao-principal .nav-link.active {
+    background-color: #8c0000;
+    color: white;
+    border-bottom: 3px solid #a40000;
+}
+
 /* Dashboard - Cards */
 .dashboard-cards {
     display: flex;
@@ -291,6 +306,109 @@ body {
     border-left-color: #28a745;
 }
 
-.status-preparado .status {
-    /* border-left-color: #28a645; */
+.status-pendente {
+    border-left-color: #ffc107;
+}
+
+.status-problema {
+    border-left-color: #dc3445;
+}
+
+/* Meus Kits */
+.container-meus-kits {
+    padding: 2rem;
+}
+
+.container-meus-kits .cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;    /* Espaço entre cabeçalho e cards */
+}
+
+.container-meus-kits .cabecalho .titulo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.botao-novo-kit {
+    background-color: #d9464f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao-novo-kit:hover{
+    background-color: #b02a37;
+}
+
+.container-kits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300, 1fr));  /* Não cria colunas menores que 300px */
+    gap: 24px;  /* Espaço entre grids */
+}
+
+.cards-kits {
+    background-color: #fff;    
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.cards-kits:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cards-kits .cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.cards-kits .cabecalho .titulo {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cards-kits .cabecalho .quantidade {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.cards-kits .descricao {
+    color: #495057;
+    flex-grow: 1;   /* Faz a descrição usar o espaço disponível, empurrando o rodapé para baixo */
+    margin-bottom: 16px;
+}
+
+.cards-kits .data-utilizado {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 16px;
+}
+
+.cards-kits .data-utilizado span {
+    display: block; /* Coloca cada descrição em uma nova linha */
+}
+
+.cards-kits .acoes {
+    display: flex;
+    gap: 20px;
+}
+
+.cards-kits .acoes a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
 }

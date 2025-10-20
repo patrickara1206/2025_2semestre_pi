@@ -48,197 +48,338 @@
 
     <nav class="barra-navegacao-principal">
         <ul>
-            <li tag="item-1"><a href="#">Dashboard</a></li>
-            <li tag="item-2"><a href="#">Novo Agendamento</a></li>
-            <li tag="item-3"><a href="#">Meus Kits</a></li>
-            <li tag="item-4"><a href="#">Histórico</a></li>
+            <li><a href="#" class="nav-link active" data-target="dashboard">Dashboard</a></li>
+            <li><a href="#" class="nav-link" data-target="novo-agendamento">Novo Agendamento</a></li>
+            <li><a href="#" class="nav-link" data-target="meus-kits">Meus Kits</a></li>
+            <li><a href="#" class="nav-link" data-target="historico">Histórico</a></li>
         </ul>
     </nav>
 
     <main>
-        <section class="dashboard-cards">
+        <section id="dashboard" class="conteudo-secao ativo">
 
-            <div class="container-cards">
-                <div class="cards-imagem bg-blue">
-                    📅
+            <div class="dashboard-cards">
+                <div class="container-cards">
+                    <div class="cards-imagem bg-blue">
+                        📅
+                    </div>
+                    <div class="cards-info">
+                        <span class="info-texto">
+                            Próximas Aulas
+                        </span>
+                        <span class="info-numero">
+                            3
+                            <!-- NUMERO DINAMICO -->
+                        </span>
+                    </div>
                 </div>
-                <div class="cards-info">
-                    <span class="info-texto">
-                        Próximas Aulas
-                    </span>
-                    <span class="info-numero">
-                        3
-                        <!-- NUMERO DINAMICO -->
-                    </span>
+
+                <div class="container-cards">
+                    <div class="cards-imagem bg-green">
+                        ✅
+                    </div>
+                    <div class="cards-info">
+                        <span class="info-texto">
+                            Kits Preparados
+                        </span>
+                        <span class="info-numero">
+                            1
+                            <!-- NUMERO DINAMICO -->
+                        </span>
+                    </div>
+                </div>
+
+                <div class="container-cards">
+                    <div class="cards-imagem bg-yellow">
+                        ⌛
+                    </div>
+                    <div class="cards-info">
+                        <span class="info-texto">
+                            Aguardando
+                        </span>
+                        <span class="info-numero">
+                            1
+                            <!-- NUMERO DINAMICO -->
+                        </span>
+                    </div>
+                </div>
+
+                <div class="container-cards">
+                    <div class="cards-imagem bg-purple">
+                        🧪
+                    </div>
+                    <div class="cards-info">
+                        <span class="info-texto">
+                            Meus Kits
+                        </span>
+                        <span class="info-numero">
+                            5
+                            <!-- NUMERO DINAMICO -->
+                        </span>
+                    </div>
                 </div>
             </div>
 
-            <div class="container-cards">
-                <div class="cards-imagem bg-green">
-                    ✅
-                </div>
-                <div class="cards-info">
-                    <span class="info-texto">
-                        Kits Preparados
-                    </span>
-                    <span class="info-numero">
-                        1
-                        <!-- NUMERO DINAMICO -->
-                    </span>
+
+            <div class="dashboard-acoes-rapidas">
+
+                <h2 class="titulo-principal">
+                    Ações Rápidas
+                </h2>
+
+                <div class="cards-acoes-rapidas">
+
+                    <!-- COMPLETAR OS HREFs -->
+
+                    <!-- Novo Agendamento -->
+                    <a href="#" class="card-acao-rapida bg-red">
+                        <div class="card-acao-rapida-icone">
+                            <span>
+                                📅
+                            </span>
+                        </div>
+                        <div class="card-acao-rapida-texto">
+                            <span class="titulo">Novo Agendamento</span>
+                            <span class="subtitulo">Agendar uso do laboratório</span>
+                        </div>
+                    </a>
+                    <!-- Criar kit -->
+                    <a href="#" class="card-acao-rapida bg-dark-blue">
+                        <div class="card-acao-rapida-icone">
+                            <span>
+                                🧪
+                            </span>
+                        </div>
+                        <div class="card-acao-rapida-texto">
+                            <span class="titulo">Criar Kit</span>
+                            <span class="subtitulo">Novo kit de materiais</span>
+                        </div>
+                    </a>
+                    <!-- Ver calendário -->
+                    <a href="#" class="card-acao-rapida bg-solid-green">
+                        <div class="card-acao-rapida-icone">
+                            <span>
+                                📅
+                            </span>
+                        </div>
+                        <div class="card-acao-rapida-texto">
+                            <span class="titulo">Ver Calendário</span>
+                            <span class="subtitulo">Disponibilidade de laboratórios</span>
+                        </div>
+                    </a>
                 </div>
             </div>
 
-            <div class="container-cards">
-                <div class="cards-imagem bg-yellow">
-                    ⌛
-                </div>
-                <div class="cards-info">
-                    <span class="info-texto">
-                        Aguardando
-                    </span>
-                    <span class="info-numero">
-                        1
-                        <!-- NUMERO DINAMICO -->
-                    </span>
+            <div class="dashboard-proximas-aulas-agendadas">
+
+                <h2 class="titulo-principal">
+                    Próximas Aulas Agendadas
+                </h2>
+
+                <div class="lista-aulas">
+                    <article class="card-aulas status-preparado">
+
+                        <div class="aula-cabecalho">
+                            <div>
+                                <span class="status">
+                                    Preparando
+                                </span>
+                                <h3 class="titulo">
+                                    Titulação Simples
+                                </h3>
+                            </div>
+                            <div class="data-horario">
+                                <span>
+                                    15/01/2025 - 14:00-16:00
+                                </span>
+                                <small>
+                                    Lab 1 - Química Geral
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="aula-main">
+                            <div class="aula-info">
+                                <span>
+                                    Turma:
+                                </span>
+                                2° Química
+                            </div>
+                            <div class="aula-info">
+                                <span>
+                                    Alunos:
+                                </span>
+                                30
+                            </div>
+                            <div class="aula-info">
+                                <span>
+                                    Kit:
+                                </span>
+                                Titulação Básica
+                            </div>
+                            <div class="aula-info">
+                                <span>
+                                    Status:
+                                </span>
+                                ✅ Preparado
+                            </div>
+                        </div>
+                        <div class="aula-detalhes">
+                            <a href="#">Ver detalhes</a>
+                            <a href="#">Editar</a>
+                        </div>
+
+                    </article>
+
+
+                    <article class="card-aulas status-pendente">
+
+                        <div class="aula-cabecalho">
+                            <div>
+                                <span class="status">
+                                    Preparando
+                                </span>
+                                <h3 class="titulo">
+                                    Titulação Simples
+                                </h3>
+                            </div>
+                            <div class="data-horario">
+                                <span>
+                                    16/01/2025 - 14:00-16:00
+                                </span>
+                                <small>
+                                    Lab 2 - Química Orgânica
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="aula-main">
+                            <div class="aula-info">
+                                <span>
+                                    Turma:
+                                </span>
+                                1° Química
+                            </div>
+                            <div class="aula-info">
+                                <span>
+                                    Alunos:
+                                </span>
+                                32
+                            </div>
+                            <div class="aula-info">
+                                <span>
+                                    Kit:
+                                </span>
+                                Titulação Básica
+                            </div>
+                            <div class="aula-info">
+                                <span>
+                                    Status:
+                                </span>
+                                ⌛Pendente
+                            </div>
+                        </div>
+                        <div class="aula-detalhes">
+                            <a href="#">Ver detalhes</a>
+                            <a href="#">Editar</a>
+                        </div>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div class="container-cards">
-                <div class="cards-imagem bg-purple">
-                    🧪
+        <section id="novo-agendamento" class="conteudo-secao">
+            <h2>NOVO AGENDAMENTO</h2>
+        </section>
+
+        <section id="meus-kits" class="conteudo-secao">
+
+            <div class="container-meus-kits">
+
+                <header class="cabecalho">
+                    <h2 class="titulo">Meus Kits de Materiais</h2>
+                    <a href="#" class="botao-novo-kit">+ Novo Kit</a>
+                </header>
+
+                <div class="container-kits">
+
+                    <article class="cards-kits">
+                        <header class="cabecalho">
+                            <h3 class="titulo">Titulação Básica</h3>
+                            <span class="quantidade">15 itens</span>
+                        </header>
+                        <p class="descricao">Kit para aulas de titulação ácido-base com indicadores</p>
+                        <div class="data-utilizado">
+                            <span>Usado em: 9 aulas</span>
+                            <span>Última vez: 03/01/2025</span>
+                        </div>
+                        <footer class="acoes">
+                            <a href="#">Ver</a>
+                            <a href="#">Editar</a>
+                        </footer>
+                    </article>
+
+                    <article class="cards-kits">
+                        <header class="cabecalho">
+                            <h3 class="titulo">Análise de Cátions</h3>
+                            <span class="quantidade">15 itens</span>
+                        </header>
+                        <p class="descricao">Kit para análise quantitativa grupo I</p>
+                        <div class="data-utilizado">
+                            <span>Usado em: 4 aulas</span>
+                            <span>Última vez: 01/01/2025</span>
+                        </div>
+                        <footer class="acoes">
+                            <a href="#">Ver</a>
+                            <a href="#">Editar</a>
+                        </footer>
+                    </article>
+                    
+                    <article class="cards-kits">
+                        <header class="cabecalho">
+                            <h3 class="titulo">Análise de Cátions</h3>
+                            <span class="quantidade">15 itens</span>
+                        </header>
+                        <p class="descricao">Kit para análise quantitativa grupo I</p>
+                        <div class="data-utilizado">
+                            <span>Usado em: 4 aulas</span>
+                            <span>Última vez: 01/01/2025</span>
+                        </div>
+                        <footer class="acoes">
+                            <a href="#">Ver</a>
+                            <a href="#">Editar</a>
+                        </footer>
+                    </article>
+
+                    <article class="cards-kits">
+                        <header class="cabecalho">
+                            <h3 class="titulo">Análise de Cátions</h3>
+                            <span class="quantidade">15 itens</span>
+                        </header>
+                        <p class="descricao">Kit para análise quantitativa grupo I</p>
+                        <div class="data-utilizado">
+                            <span>Usado em: 4 aulas</span>
+                            <span>Última vez: 01/01/2025</span>
+                        </div>
+                        <footer class="acoes">
+                            <a href="#">Ver</a>
+                            <a href="#">Editar</a>
+                        </footer>
+                    </article>
+                    
                 </div>
-                <div class="cards-info">
-                    <span class="info-texto">
-                        Meus Kits
-                    </span>
-                    <span class="info-numero">
-                        5
-                        <!-- NUMERO DINAMICO -->
-                    </span>
-                </div>
+
             </div>
 
         </section>
 
-        <section class="dashboard-acoes-rapidas">
-
-            <h2 class="titulo-principal">
-                Ações Rápidas
-            </h2>
-
-            <div class="cards-acoes-rapidas">
-
-                <!-- COMPLETAR OS HREFs -->
-
-                <!-- Novo Agendamento -->
-                <a href="#" class="card-acao-rapida bg-red">
-                    <div class="card-acao-rapida-icone">
-                        <span>
-                            📅
-                        </span>
-                    </div>
-                    <div class="card-acao-rapida-texto">
-                        <span class="titulo">Novo Agendamento</span>
-                        <span class="subtitulo">Agendar uso do laboratório</span>
-                    </div>
-                </a>
-                <!-- Criar kit -->
-                <a href="#" class="card-acao-rapida bg-dark-blue">
-                    <div class="card-acao-rapida-icone">
-                        <span>
-                            🧪
-                        </span>
-                    </div>
-                    <div class="card-acao-rapida-texto">
-                        <span class="titulo">Criar Kit</span>
-                        <span class="subtitulo">Novo kit de materiais</span>
-                    </div>
-                </a>
-                <!-- Ver calendário -->
-                <a href="#" class="card-acao-rapida bg-solid-green">
-                    <div class="card-acao-rapida-icone">
-                        <span>
-                            📅
-                        </span>
-                    </div>
-                    <div class="card-acao-rapida-texto">
-                        <span class="titulo">Ver Calendário</span>
-                        <span class="subtitulo">Disponibilidade de laboratórios</span>
-                    </div>
-                </a>
-
-            </div>
-        </section>
-
-        <section class="dashboard-proximas-aulas-agendadas">
-
-            <h2 class="titulo-principal">
-                Próximas Aulas Agendadas
-            </h2>
-
-            <div class="lista-aulas">
-                <article class="card-aulas status-preparado">
-
-                    <div class="aula-cabecalho">
-                        <div>
-                            <span class="status">
-                                Preparando
-                            </span>
-                            <h3 class="titulo">
-                                Titulação Simples
-                            </h3>
-                        </div>
-                        <div class="data-horario">
-                            <span>
-                                15/01/2025 - 14:00-16:00
-                            </span>
-                            <small>
-                                Lab 1 - Química Geral
-                            </small>
-                        </div>
-                    </div>
-
-                    <div class="aula-main">
-                        <div class="aula-info">
-                            <span>
-                                Turma:
-                            </span>
-                            2° Química
-                        </div>
-                        <div class="aula-info">
-                            <span>
-                                Alunos: 
-                            </span>
-                            30
-                        </div>
-                        <div class="aula-info">
-                            <span>
-                                Kit: 
-                            </span>
-                            Titulação Básica
-                        </div>
-                        <div class="aula-info">
-                            <span>
-                                Status: 
-                            </span>
-                            ✅ Preparado
-                        </div>
-                    </div>
-                    <div class="aula-detalhes">
-                        <a href="#">Ver detalhes</a>
-                        <a href="#">Editar</a>
-                    </div>
-
-                </article>
-                <article class="card-aulas status-problema">
-
-                </article>
-
-            </div>
-
+        <section id="historico" class="conteudo-secao">
+            <h2>HISTORICO</h2>
         </section>
 
     </main>
+
+    <script src="javascript.js"></script>
 
 </body>
 
