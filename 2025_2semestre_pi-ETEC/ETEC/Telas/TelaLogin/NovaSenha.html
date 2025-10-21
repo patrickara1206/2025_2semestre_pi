@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Senha - Sistema de Laboratórios</title>
+    <link rel="stylesheet" href="TelaLogin.css">
+</head>
+<body>
+    <div class="container">
+       <div class="brand-images-top">
+            <img src="/Imagens/etec_santo_andre.png" alt="Etec Júlio de Mesquita - Santo André" class="brand-image top">
+            <img src="/Imagens/cps-logo-identidade.png" alt="Centro Paula Souza" class="brand-image top">
+        </div>
+        <div class="page-titles">
+            <h1 class="title-main">Sistema de Laboratórios</h1>
+            <h2 class="title-medium">ETEC Júlio de Mesquita</h2>
+            <p class="title-sub">Definir Nova Senha</p>
+        </div>
+        <div class="login-card">
+            <div class="login-header">
+                <h2>Nova Senha</h2>
+                <p>Digite sua nova senha nos campos abaixo</p>
+            </div>
+            
+            <form class="login-form" id="novaSenhaForm">
+                <div class="input-group">
+                    <label for="nova-senha">Nova Senha</label>
+                    <input type="password" id="nova-senha" name="nova-senha" placeholder="Digite sua nova senha" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="confirmar-senha">Confirmar Senha</label>
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Digite novamente sua nova senha" required>
+                </div>
+                
+                <div id="senha-error" class="error-message" style="display: none;">
+                    <p>As senhas não coincidem. Tente novamente.</p>
+                </div>
+                
+                <button type="submit" class="login-button">Alterar Senha</button>
+            </form>
+            
+            <div class="back-login">
+                <p>Lembrou da senha? <a href="TelaLogin.html">Voltar ao Login</a></p>
+            </div>
+        </div>
+        <img src="/Imagens/governosp.png" alt="Governo do Estado de São Paulo" class="brand-image bottom">
+    </div>
+
+    <script>
+        document.getElementById('novaSenhaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const novaSenha = document.getElementById('nova-senha').value;
+            const confirmarSenha = document.getElementById('confirmar-senha').value;
+            const errorDiv = document.getElementById('senha-error');
+            
+            if (novaSenha !== confirmarSenha) {
+                errorDiv.style.display = 'block';
+                return;
+            }
+            errorDiv.style.display = 'none';
+            alert('Senha alterada com sucesso!');
+        });
+        document.getElementById('confirmar-senha').addEventListener('input', function() {
+            document.getElementById('senha-error').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
