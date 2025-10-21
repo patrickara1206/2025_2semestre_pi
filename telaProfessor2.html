@@ -288,10 +288,121 @@
             </div>
         </section>
 
+        <!-- NOVO AGENDAMENTO ABA -->
         <section id="novo-agendamento" class="conteudo-secao">
-            <h2>NOVO AGENDAMENTO</h2>
+
+            <div class="novo-agendamento-container">
+                <h2 class="novo-agendamento-titulo">Novo Agendamento</h2>
+
+                <form class="agendamento-form">
+
+                    <div class="agendamento-grid duas-colunas">
+                        <div class="grupo-form">
+                            <label for="disciplina">Disciplina</label>
+                            <select name="disciplina" id="disciplina">
+                                <option value="" disabled selected>Selecione a disciplina</option>
+                            </select>
+                        </div>
+                        <div class="grupo-form">
+                            <label for="turma">Turma</label>
+                            <select name="turma" id="turma">
+                                <option value="" disabled selected>Selecione a turma</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="agendamento-grid tres-colunas">
+                        <div class="grupo-form">
+                            <label for="data">Data</label>
+                            <input type="text" name="data" id="data" placeholder="dd/mm/aaaa">
+                        </div>
+                        <div class="grupo-form">
+                            <label for="horario-inicio">Horario Início</label>
+                            <select name="horario-inicio" id="horario-inicio">
+                                <option value="" disabled selected>Selecione</option>
+                            </select>
+                        </div>
+                        <div class="grupo-form">
+                            <label for="horario-fim">Horário Fim</label>
+                            <select name="horario-fim" id="horario-fim">
+                                <option value="" disabled selected>Selecione</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset class="grupo-form selecao-laboratorio">
+                        <legend>Laboratório</legend>
+                        <div class="laboratorios-grid">
+
+                            <div class="laboratorios-card">
+                                <input type="radio" name="laboratorio" id="lab1" class="laboratorios-card-input">
+                                <label for="lab1" class="laboratorios-card-conteudo">
+                                    <strong>Laboratório 1</strong>
+                                    <small>Química Geral</small>
+                                    <small>Capacidade: 35 alunos</small>
+                                    <span class="laboratorios-status status-disponivel">✅ Disponível</span>
+                                </label>
+                            </div>
+
+                            <div class="laboratorios-card">
+                                <input type="radio" name="laboratorio" id="lab2" class="laboratorios-card-input">
+                                <label for="lab2" class="laboratorios-card-conteudo">
+                                    <strong>Laboratório 2</strong>
+                                    <small>Química Orgânica</small>
+                                    <small>Capacidade: 20 alunos</small>
+                                    <span class="laboratorios-status status-disponivel">✅ Disponível</span>
+                                </label>
+                            </div>
+
+                            <div class="laboratorios-card">
+                                <input type="radio" name="laboratorio" id="lab3" class="laboratorios-card-input">
+                                <label for="lab3" class="laboratorios-card-conteudo">
+                                    <strong>Laboratório 3</strong>
+                                    <small>Química Nuclear</small>
+                                    <small>Capacidade: 5 alunos</small>
+                                    <span class="laboratorios-status status-ocupado">⚠️ Ocupado 14:00 - 16:00</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="grupo-form">
+                        <label for="titulo-aula">Título da Aula</label>
+                        <input type="text" name="titulo-aula" id="titulo-aula" placeholder="Título da Aula">
+                    </div>
+                    <div class="grupo-form">
+                        <label for="num-alunos">Número de Alunos</label>
+                        <input type="number" name="num-alunos" id="num-alunos" placeholder="Número de Alunos">
+                    </div>
+
+                    <fieldset class="grupo-form opcoes-kits">
+                        <legend class="label-form">Kits de Materiais</legend>
+                        <div class="item">
+                            <input type="radio" name="kit" id="kit-existente" value="existente" checked>
+                            <label for="kit-existente">Usar kit existente</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="kit" id="kit-novo" value="novo">
+                            <label for="kit-novo">Criar novo kit</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="grupo-form">
+                        <label for="observacoes">Observações</label>
+                        <textarea name="observacoes" id="observacoes" rows="4" placeholder="Observações"></textarea>
+                    </div>
+
+                    <div class="acoes-form">
+                        <button type="button" class="botao-salvar-rascunho">Salvar Rascunho</button>
+                        <button type="submit" class="botao-confirmar-agendamento">Confirmar Agendamento</button>
+                    </div>
+
+                </form>
+            </div>
+
         </section>
 
+        <!-- MEUS KITS ABA -->
         <section id="meus-kits" class="conteudo-secao">
 
             <div class="container-meus-kits">
@@ -334,7 +445,7 @@
                             <a href="#">Editar</a>
                         </footer>
                     </article>
-                    
+
                     <article class="cards-kits">
                         <header class="cabecalho">
                             <h3 class="titulo">Análise de Cátions</h3>
@@ -366,7 +477,7 @@
                             <a href="#">Editar</a>
                         </footer>
                     </article>
-                    
+
                 </div>
 
             </div>
@@ -374,7 +485,52 @@
         </section>
 
         <section id="historico" class="conteudo-secao">
-            <h2>HISTORICO</h2>
+
+            <div class="container-historico">
+
+                <h2 class="titulo-historico">Histórico de Agendamentos</h2>
+
+                <div class="filtro-historico">
+                    <input type="search" class="filtro-busca" placeholder="Buscar por título da aula...">
+                    <select name="periodo" class="filtro-select">
+                        <option value="Todos">Todos os períodos</option>
+                    </select>
+                    <select name="periodo" class="filtro-select">
+                        <option value="Todos">Todos os laboratórios</option>
+                    </select>
+                </div>
+
+                <div class="lista-historico">
+
+                    <article class="item-historico">
+                        <div class="item-historico-info">
+                            <h3 class="titulo">Titulação Simples</h3>
+                            <span class="subtitulo">Lab 1 - 14:00 - 16:00</span>
+                        </div>
+                        <div class="item-historico-detalhes">
+                            2° Química A - 28 Alunos
+                        </div>
+                        <div class="item-historico-detalhes">
+                            Kit: Titulação Insana
+                        </div>
+                        <div class="status-historico status-realizado">
+                            Realizada ✅
+                        </div>
+                        <div class="item-historico-data">
+                            10/01/2025
+                        </div>
+                    </article>
+
+                    <!-- <article class="item-historico">Repete aqui </article> -->
+                </div>
+
+            </div>
+
+
+
+
+
+
         </section>
 
     </main>
