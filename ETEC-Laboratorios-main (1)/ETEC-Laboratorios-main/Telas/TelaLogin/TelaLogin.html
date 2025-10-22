@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratórios - Login</title>
+    <link rel="stylesheet" href="TelaLogin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-images-top">
+            <img src="/Imagens/etec_santo_andre.png" alt="Etec Júlio de Mesquita - Santo André" class="brand-image top">
+            <img src="/Imagens/cps-logo-identidade.png" alt="Centro Paula Souza" class="brand-image top">
+        </div>
+        <div class="page-titles">
+            <h1 class="title-main">Sistema de Laboratórios</h1>
+            <h2 class="title-medium">ETEC Júlio de Mesquita</h2>
+            <p class="title-sub">Agendamento e Gerenciamento de Aulas Práticas</p>
+        </div>
+        <div class="login-card">
+            <div class="login-header">
+                <h1>Entrar</h1>
+                <p>Bem-vindo de volta!</p>
+            </div>
+            
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="account-type">Usuário</label>
+                    <select id="account-type" name="account-type" class="account-type-select" required>
+                        <option value="">Selecione o tipo de usuário</option>
+                        <option value="administrador">Administrador</option>
+                        <option value="tecnico">Técnico</option>
+                        <option value="professor">Professor</option>
+                    </select>
+                </div>
+                
+                <div class="remember-forgot">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember">
+                        <span class="checkmark"></span>
+                        Lembrar de mim
+                    </label>
+                    <a href="EsqueceuSenha.html" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+                
+                <button type="submit" class="login-button">Entrar</button>
+            </form>
+        </div>
+        <img src="/Imagens/governosp.png" alt="Governo do Estado de São Paulo" class="brand-image bottom">
+    </div>
+</body>
+</html>
