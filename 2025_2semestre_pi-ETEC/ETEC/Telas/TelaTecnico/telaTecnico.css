@@ -1,0 +1,344 @@
+:root {
+    --font-size-base: 1rem; /* 16px */
+}
+html {
+    font-size: var(--font-size-base);
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+p {
+    margin: 0;
+}
+
+.cabecalho-inicial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.container-logo, .container-usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.container-logo img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.etec-info{
+    text-align: center;
+    position: absolute;
+    width: 97%;
+    text-align: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.usuario-info {
+    text-align: center;
+}
+
+.etec-info p, .usuario-info p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.botao-sair {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+.botao-sair:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+/* Ajustes do dropdown de acessibilidade */
+.dropdown-acessibilidade {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.etec-info {
+    text-align: center;
+    position: absolute;
+    width: 97%;
+    text-align: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container-usuario {
+    text-align: right;
+    min-width: 180px;
+}
+
+.botao-sair {
+    margin-top: 5px;
+    padding: 6px 14px;
+    background-color: #db0016;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.container-usuario,
+.container-usuario .dropdown-acessibilidade,
+.container-usuario .botao-acessibilidade,
+#botaoSair {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* Navegação */
+.barra-navegacao-principal {
+    background-color: #ac0000;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.barra-navegacao-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.barra-navegacao-principal a {
+    color: #ffffff !important; 
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 25px;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.barra-navegacao-principal a:hover,
+.barra-navegacao-principal a.active {
+    background-color: #8c0000;
+    color: #ffffff !important;
+}
+
+.barra-navegacao-principal a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(170, 170, 170);
+}
+
+/* Sections */
+section {
+    display: none;
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+}
+
+thead th {
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+tbody td {
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* Botões */
+.botao-acao {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.botao-confirmar {
+    background-color: #198754;
+    color: white;
+}
+
+.botao-cancelar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.botao-adicionar {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.botao-alerta {
+    background-color: #ffc107;
+    color: black;
+}
+
+/* Rodapé técnico */
+.agendamentos-lista p em,
+.estoque-tabela p em,
+.historico-tabela p em {
+    display: block;
+    margin-top: 15px;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* --- ACESSIBILIDADE --- */
+.dropdown-acessibilidade {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.botao-acessibilidade {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6c757d;
+    transition: background-color 0.3s;
+}
+.botao-acessibilidade:hover {
+    background-color: #f4f4f4;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 5px;
+    background-color: #ffffff;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    border: 1px solid #dee2e6;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    justify-content: flex-start;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-content .divider {
+    height: 1px;
+    margin: .5rem 0;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+.dropdown-content .dropdown-header {
+    display: block;
+    padding: .5rem 1rem;
+    margin-bottom: 0;
+    font-size: .875rem;
+    color: #6c757d;
+    white-space: nowrap;
+    text-align: left; 
+}
+
+.dropdown-content i {
+    margin-right: 0.5rem;
+    width: auto;
+    font-size: 1.05rem; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .cabecalho-inicial,
+.dark-mode table {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode .dropdown-content {
+    background-color: #444;
+    border-color: #666;
+}
+
+.dark-mode .dropdown-content a {
+    color: #fff;
+}
+
+.dark-mode .dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dark-mode .dropdown-content .divider {
+    background-color: #666;
+}
+
+/* --- FILTROS PARA DALTONISMO --- */
+body.protanopia { filter: grayscale(0.5) sepia(0.2) hue-rotate(-15deg); }
+body.deuteranopia { filter: grayscale(0.4) sepia(0.3) hue-rotate(10deg); }
+body.tritanopia { filter: grayscale(0.3) sepia(0.1) hue-rotate(20deg); }
