@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Senha - Sistema de Laboratórios ETEC</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'etec-red': '#C41E3A',
+            'etec-blue': '#003366',
+            'etec-gray': '#666666'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos Externos -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="recovery-body">
+  <div class="w-full max-w-md">
+    <!-- Logo e Header -->
+    <div class="text-center mb-8">
+      <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+        <span class="text-etec-red font-bold text-3xl">E</span>
+      </div>
+      <h1 class="text-2xl font-bold text-white mb-2">ETEC Júlio de Mesquita</h1>
+      <p class="text-blue-200">Sistema de Laboratórios de Química</p>
+    </div>
+
+    <!-- Card Principal -->
+    <div class="bg-white rounded-2xl card-shadow p-8">
+      <!-- Indicador de Etapas -->
+      <div class="flex items-center justify-center mb-8">
+        <div class="flex items-center space-x-2">
+          <div id="step1" class="step-indicator step-active w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium">1</div>
+          <div class="w-8 h-0.5 bg-gray-300"></div>
+          <div id="step2" class="step-indicator step-inactive w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium">2</div>
+          <div class="w-8 h-0.5 bg-gray-300"></div>
+          <div id="step3" class="step-indicator step-inactive w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium">3</div>
+        </div>
+      </div>
+
+      <!-- Etapa 1: Identificação -->
+      <div id="etapa1" class="step-content">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-etec-red text-2xl">🔐</span>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-2">Recuperar Senha</h2>
+          <p class="text-gray-600">Informe seus dados para recuperar o acesso ao sistema</p>
+        </div>
+
+        <form id="form-identificacao" class="space-y-4">
+          <!-- Tipo de Usuário -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Tipo de Usuário</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-etec-red transition-colors">
+                <input type="radio" name="tipo-usuario" value="professor" class="text-etec-red mr-3">
+                <div>
+                  <div class="font-medium text-gray-900">Professor</div>
+                  <div class="text-sm text-gray-500">Docente</div>
+                </div>
+              </label>
+              <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-etec-red transition-colors">
+                <input type="radio" name="tipo-usuario" value="tecnico" class="text-etec-red mr-3">
+                <div>
+                  <div class="font-medium text-gray-900">Técnico</div>
+                  <div class="text-sm text-gray-500">Laboratório</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Método de Recuperação -->
+          <div id="metodo-recuperacao" class="hidden">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Como deseja recuperar?</label>
+            <div class="space-y-3">
+              <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-etec-red transition-colors">
+                <input type="radio" name="metodo" value="email" class="text-etec-red mr-3">
+                <div class="flex items-center">
+                  <span class="text-blue-600 mr-2">📧</span>
+                  <div>
+                    <div class="font-medium text-gray-900">Por E-mail</div>
+                    <div class="text-sm text-gray-500">Enviaremos um link para seu e-mail</div>
+                  </div>
+                </div>
+              </label>
+              <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-etec-red transition-colors">
+                <input type="radio" name="metodo" value="matricula" class="text-etec-red mr-3">
+                <div class="flex items-center">
+                  <span class="text-green-600 mr-2">🆔</span>
+                  <div>
+                    <div class="font-medium text-gray-900">Por Matrícula/ID</div>
+                    <div class="text-sm text-gray-500">Use seu número de identificação</div>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Campos de Input (E-mail, Matrícula, Nome) -->
+          <div id="campo-email" class="hidden">
+            <label class="block text-sm font-medium text-gray-700 mb-2">E-mail Institucional</label>
+            <div class="relative">
+              <input type="email" placeholder="seu.email@etec.sp.gov.br" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg input-focus transition-all">
+              <span class="absolute left-3 top-3.5 text-gray-400">📧</span>
+            </div>
+          </div>
+          <div id="campo-matricula" class="hidden">
+            <label class="block text-sm font-medium text-gray-700 mb-2"><span id="label-matricula">Número de Matrícula</span></label>
+            <div class="relative">
+              <input type="text" id="input-matricula" placeholder="Digite seu número de identificação" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg input-focus transition-all">
+              <span class="absolute left-3 top-3.5 text-gray-400">🆔</span>
+            </div>
+          </div>
+          <div id="campo-nome" class="hidden">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Nome Completo</label>
+            <div class="relative">
+              <input type="text" placeholder="Digite seu nome completo" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg input-focus transition-all">
+              <span class="absolute left-3 top-3.5 text-gray-400">👤</span>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full btn-primary text-white py-3 px-4 rounded-lg font-medium">Continuar</button>
+        </form>
+      </div>
+
+      <!-- Etapa 2: Verificação -->
+      <div id="etapa2" class="step-content hidden">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-blue-600 text-2xl">📱</span></div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-2">Verificação</h2>
+          <p class="text-gray-600">Enviamos um código de verificação</p>
+          <p id="destino-codigo" class="text-sm text-etec-red font-medium mt-2"></p>
+        </div>
+        <form id="form-verificacao" class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Código de Verificação</label>
+            <div class="flex justify-center space-x-2">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg input-focus">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg input-focus">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg input-focus">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg input-focus">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg input-focus">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl font-bold border border-gray-300 rounded-lg input-focus">
+            </div>
+          </div>
+          <div class="text-center">
+            <p class="text-sm text-gray-600 mb-2">Não recebeu o código?</p>
+            <button type="button" id="reenviar-codigo-btn" class="text-etec-red hover:text-red-700 font-medium text-sm">Reenviar código</button>
+            <p id="timer-reenvio" class="text-xs text-gray-500 mt-1"></p>
+          </div>
+          <button type="submit" class="w-full btn-primary text-white py-3 px-4 rounded-lg font-medium">Verificar Código</button>
+        </form>
+      </div>
+
+      <!-- Etapa 3: Nova Senha -->
+      <div id="etapa3" class="step-content hidden">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-green-600 text-2xl">🔑</span></div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-2">Nova Senha</h2>
+          <p class="text-gray-600">Crie uma senha segura para sua conta</p>
+        </div>
+        <form id="form-nova-senha" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Nova Senha</label>
+            <div class="relative">
+              <input type="password" id="nova-senha" placeholder="Digite sua nova senha" class="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg input-focus transition-all">
+              <span class="absolute left-3 top-3.5 text-gray-400">🔒</span>
+              <button type="button" class="toggle-senha-btn absolute right-3 top-3.5 text-gray-400 hover:text-gray-600">👁️</button>
+            </div>
+            <div id="forca-senha" class="mt-2">
+              <div class="flex space-x-1">
+                <div class="h-2 flex-1 bg-gray-200 rounded"></div>
+                <div class="h-2 flex-1 bg-gray-200 rounded"></div>
+                <div class="h-2 flex-1 bg-gray-200 rounded"></div>
+                <div class="h-2 flex-1 bg-gray-200 rounded"></div>
+              </div>
+              <p id="texto-forca" class="text-xs text-gray-500 mt-1">Digite uma senha</p>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Confirmar Senha</label>
+            <div class="relative">
+              <input type="password" id="confirmar-senha" placeholder="Digite novamente sua senha" class="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg input-focus transition-all">
+              <span class="absolute left-3 top-3.5 text-gray-400">🔒</span>
+              <button type="button" class="toggle-senha-btn absolute right-3 top-3.5 text-gray-400 hover:text-gray-600">👁️</button>
+            </div>
+            <p id="confirmacao-status" class="text-xs mt-1"></p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-4">
+            <p class="text-sm font-medium text-gray-700 mb-2">Requisitos da senha:</p>
+            <ul class="text-xs text-gray-600 space-y-1">
+              <li id="req-tamanho" class="flex items-center"><span class="mr-2">❌</span> Mínimo 8 caracteres</li>
+              <li id="req-maiuscula" class="flex items-center"><span class="mr-2">❌</span> Uma letra maiúscula</li>
+              <li id="req-minuscula" class="flex items-center"><span class="mr-2">❌</span> Uma letra minúscula</li>
+              <li id="req-numero" class="flex items-center"><span class="mr-2">❌</span> Um número</li>
+            </ul>
+          </div>
+          <button type="submit" class="w-full btn-primary text-white py-3 px-4 rounded-lg font-medium">Alterar Senha</button>
+        </form>
+      </div>
+
+      <!-- Etapa de Sucesso -->
+      <div id="etapa-sucesso" class="step-content hidden text-center">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"><span class="text-green-600 text-3xl">✅</span></div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Senha Alterada!</h2>
+        <p class="text-gray-600 mb-6">Sua senha foi alterada com sucesso. Agora você pode fazer login com sua nova senha.</p>
+        <button id="btn-fazer-login" class="w-full btn-primary text-white py-3 px-4 rounded-lg font-medium mb-4">Fazer Login</button>
+        <div class="bg-blue-50 rounded-lg p-4">
+          <p class="text-sm text-blue-800"><strong>Dica de Segurança:</strong> Mantenha sua senha segura e não a compartilhe com outras pessoas.</p>
+        </div>
+      </div>
+
+      <!-- Links de Ajuda -->
+      <div class="mt-6 text-center space-y-2">
+        <button id="btn-voltar-login" class="text-etec-blue hover:text-blue-800 text-sm font-medium">← Voltar ao Login</button>
+        <div class="text-xs text-gray-500">
+          <p>Precisa de ajuda? Entre em contato:</p>
+          <p>📞 (11) 1234-5678 | 📧 suporte@etec.sp.gov.br</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Externo -->
+  <script src="js/esqueceuSenha.js"></script>
+</body>
+
+</html>

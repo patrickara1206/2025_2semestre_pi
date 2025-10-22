@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor - Sistema de Laboratórios ETEC</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'etec-red': '#C41E3A',
+                        'etec-blue': '#003366',
+                        'etec-gray': '#666666'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Estilos Externos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/painel.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-etec-blue text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                        <span class="text-etec-red font-bold text-xl">E</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold">ETEC Júlio de Mesquita</h1>
+                        <p class="text-blue-200 text-sm">Sistema de Laboratórios de Química</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <p class="font-medium">Prof. Maria Santos</p>
+                        <p class="text-blue-200 text-sm">Química Analítica</p>
+                    </div>
+                    <button class="bg-etec-red hover:bg-red-700 px-4 py-2 rounded-lg transition-colors"
+                        onclick="window.location.href='/telaLogin.html'">
+                        Sair
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-6">
+        <!-- Navigation Tabs -->
+        <div class="mb-6">
+            <div class="border-b border-gray-200">
+                <nav id="tabs-container" class="-mb-px flex space-x-8">
+                    <button data-tab="dashboard" class="tab-button active py-2 px-1 border-b-2 border-etec-red text-etec-red font-medium text-sm">
+                        Dashboard
+                    </button>
+                    <button data-tab="agendamento" class="tab-button py-2 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium text-sm">
+                        Novo Agendamento
+                    </button>
+                    <button data-tab="kits" class="tab-button py-2 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium text-sm">
+                        Meus Kits
+                    </button>
+                    <button data-tab="historico" class="tab-button py-2 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium text-sm">
+                        Histórico
+                    </button>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Dashboard Tab -->
+        <div id="dashboard-content" class="tab-content">
+            <!-- Conteúdo do Dashboard (Ações Rápidas, Próximas Aulas, etc.) -->
+        </div>
+
+        <!-- Novo Agendamento Tab -->
+        <div id="agendamento-content" class="tab-content hidden">
+            <!-- Conteúdo do formulário de Agendamento -->
+        </div>
+
+        <!-- Meus Kits Tab -->
+        <div id="kits-content" class="tab-content hidden">
+            <!-- Conteúdo de Meus Kits -->
+        </div>
+
+        <!-- Histórico Tab -->
+        <div id="historico-content" class="tab-content hidden">
+            <!-- Conteúdo do Histórico -->
+        </div>
+    </div>
+
+    <!-- Modal Seletor de Materiais -->
+    <div id="modal-materiais" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 max-w-4xl w-full mx-4 max-h-[80vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-gray-900">Selecionar Materiais</h3>
+                <button class="close-modal-btn" data-modal="modal-materiais">
+                    <span class="text-2xl">&times;</span>
+                </button>
+            </div>
+            <!-- Conteúdo do modal -->
+        </div>
+    </div>
+
+    <!-- Script Externo -->
+    <script src="js/telaProfessor.js"></script>
+</body>
+
+</html>
