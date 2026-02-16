@@ -1,0 +1,137 @@
+/* Container geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Cabeçalho */
+.cabecalho-inicial {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+.container-logo img {
+    height: 60px;
+}
+
+.etec-info {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.container-usuario {
+    text-align: right;
+    min-width: 180px;
+}
+
+.botao-sair {
+    margin-top: 5px;
+    padding: 6px 14px;
+    background-color: #db0016;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Navegação */
+.barra-navegacao-principal ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ac0000;
+    border-bottom: 1px solid #ffffff;
+}
+
+.barra-navegacao-principal li {
+    margin: 0 20px;
+    padding: 12px 0;
+}
+
+.barra-navegacao-principal a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.barra-navegacao-principal li.ativo a {
+    border-bottom: 2px solid #0d6efd;
+}
+
+/* Sections */
+section {
+    display: none;
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+}
+
+thead th {
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+tbody td {
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/* Botões */
+.botao-acao {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.botao-confirmar {
+    background-color: #198754;
+    color: white;
+}
+
+.botao-cancelar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.botao-adicionar {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.botao-alerta {
+    background-color: #ffc107;
+    color: black;
+}
+
+/* Rodapé técnico */
+.agendamentos-lista p em,
+.estoque-tabela p em,
+.historico-tabela p em {
+    display: block;
+    margin-top: 15px;
+    font-style: italic;
+    color: #6c757d;
+}
